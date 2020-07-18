@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+input/*
+!input/.gitkeep
+
+output/*
+!output/.gitkeep
+
+json/
+output_test/
+i18n_fr.json
