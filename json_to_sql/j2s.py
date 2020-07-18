@@ -49,6 +49,38 @@ class J2S:
         return self.queries
 
 
+    def get_jvalue_types(self):
+        return self.jvalue
+
+    def get_jarray_types(self):
+        return self.jarray
+
+    def get_jarrayOfArray_types(self):
+        return self.jarray_of_array
+
+    def get_jobject_types(self):
+        return self.jobject
+
+    def get_jarrayOfObject_types(self):
+        return self.jarray_of_object
+
+
+    def get_jvalue_data(self):
+        return self.all_jvalue_data
+
+    def get_jarray_data(self):
+        return self.all_jarray_data
+
+    def get_jarrayOfArray_data(self):
+        return self.all_jarray_of_array_data
+
+    def get_jobject_data(self):
+        return self.all_jobject_data
+
+    def get_jarrayOfObject_data(self):
+        return self.all_jarray_of_object_data
+
+
     def unnest_json(self, json):
         """
         Parcours le json donné pour remplir les dictionnaires "jvalue", "jarray", "jarray_of_array", "jobject",
@@ -98,7 +130,8 @@ class J2S:
 
                 # Si c'est une autre valeur. Ex: "id": 1, "isAlive": true, "token": "Gs5Q4"
                 else:
-                    self.jvalue[key] = type(value)
+                    if value != None: # A l'exception du type null qui doit être considéré comme un objet
+                        self.jvalue[key] = type(value)
 
 
     def generate_create_table_for_jvalue(self):
@@ -277,10 +310,11 @@ class J2S:
             list = []
             dict = {}
             for key, value in self.jobject.items():
-                s_dict = {}
-                for s_key, s_value in value.items():
-                    s_dict[s_key] = data[key][s_key]
-                dict[key] = s_dict
+                if data[key] != None:
+                    s_dict = {}
+                    for s_key, s_value in value.items():
+                        s_dict[s_key] = data[key][s_key]
+                    dict[key] = s_dict
             list.append(_Id)
             list.append(dict)
             self.all_jobject_data.append(list)
