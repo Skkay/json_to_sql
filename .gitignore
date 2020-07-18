@@ -4,9 +4,11 @@ __pycache__/
 
 input/*
 !input/.gitkeep
+!input/JsonExample.json
 
 output/*
 !output/.gitkeep
+!output/JsonExample.sql
 
 json/
 output_test/

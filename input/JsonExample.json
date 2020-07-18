@@ -1,0 +1,81 @@
+[
+    {
+        "str_key": "value",
+        "int_key": 10,
+        "float_key": -273.15,
+        "bool_key": false,
+        "list_key": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "object_key": {
+            "some_key": "some_value",
+            "another_key": 75
+        },
+        "list_object_key": [
+            {
+                "one_key": "one_value",
+                "two_key": true
+            },
+            {
+                "one_key": "a_value",
+                "two_key": false
+            }
+        ],
+        "list_list_key": [
+            [
+                1, 
+                5
+            ],
+            [
+                2,
+                7
+            ]
+        ]
+    },
+    {
+        "str_key": "value_2",
+        "int_key": 102,
+        "float_key": 154.2,
+        "bool_key": false,
+        "list_key": [
+            12,
+            2
+        ],
+        "object_key": {
+            "some_key": "some_value",
+            "another_key": 75987
+        },
+        "list_object_key": [
+            {
+                "one_key": "value ?",
+                "two_key": false
+            },
+            {
+                "one_key": "hey",
+                "two_key": true
+            }
+        ],
+        "list_list_key": [
+            [
+                1, 
+                9
+            ],
+            [
+                4,
+                6
+            ],
+            [
+                4,
+                64
+            ],
+            [
+                902,
+                87
+            ]
+        ]
+    }
+]
