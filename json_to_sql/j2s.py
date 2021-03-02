@@ -321,9 +321,9 @@ class J2S:
             ## ------------------------------------- ##
 
             ## JARRAY_OF_OBJECT
-            list = []
-            dict = {}
             for key, value in self.jarray_of_object.items():
+                list = []
+                dict = {}
                 if data[key]: # Si la liste n'est pas vide
                     s_list = []
                     for object in data[key]:
